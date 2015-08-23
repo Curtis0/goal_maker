@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>My Goal</h1>
+
+    <!-- <%# @goal.each do |goal| %>  does not work in this case for 2 reasons.
+  1. The method I defined for "show" in the goals controller only puts in the :id of the goal for that goal not all goals.
+  2. I only want to show the information for the one goal so naturally I don't want to put the name, description, etc. of each goal the user has made on the show page. -->
+
+  <h2><%= @goal.name %></h2>
+
+  <p><%= @goal.description %></p>
+
+  <p><%= @goal.finish_by %></p>
+
+  <%= form_for @goal do |f| %>
+
+  <p><%= f.label :accomplished %></p>
+  <%= f.check_box :accomplished %>
+
+  <% end %>
+
+  </div>
+</div>
+
+
+

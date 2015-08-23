@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>New Goal</h1>
+
+    <%= form_for @goal do |f| %>
+
+      <%= f.label :name, 'Goal Name' %><br>
+      <%= f.text_field :name, class: "form-control" %><br>
+
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: "form-control" %><br>
+
+      <%= f.label :finish_by %><br>
+      <%= f.date_field :finish_by, class: "form-control" %><br>
+
+        <!-- <h1>New Milestone</h1>
+        <!- - How can I save data (in forms) to two databases from one page, all at one time? - ->
+
+        <%#= form_for @milestone do |m| %>
+
+          <%#= m.label :name %><br>
+          <%#= m.text_field :name, class: "form-control" %><br>
+
+          <%#= m.label :description %><br>
+          <%#= m.text_area :description, class: "form-control" %><br>
+
+          <%#= m.label :finish_by %><br>
+          <%#= m.date_field :finish_by, class: "form-control" %><br>
+
+          <%#= m.submit "Save new milestone" %>
+
+        <%# end %> -->
+
+      <%= f.submit "Save new goal", class: "btn btn-large btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
+

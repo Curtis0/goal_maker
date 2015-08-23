@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>New Milestone</h1>
+    <!-- How can I save data (in forms) to two databases from one page, all at one time? -->
+
+    <%= form_for @milestone do |m| %>
+
+      <%= m.label :name %><br>
+      <%= m.text_field :name, class: "form-control" %><br>
+
+      <%= m.label :description %><br>
+      <%= m.text_area :description, class: "form-control" %><br>
+
+      <%= m.label :finish_by %><br>
+      <%= m.date_field :finish_by, class: "form-control" %><br>
+
+      <%= m.submit "Save new milestone" %>
+
+    <% end %>
+
+  </div>
+</div>
+
