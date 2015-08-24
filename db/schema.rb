@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150821064408) do
   add_index "goals", ["user_id"], name: "index_goals_on_user_id"
 
   create_table "milestones", force: :cascade do |t|
+    t.integer  "goal_id"
     t.string   "name"
     t.string   "description"
     t.date     "finish_by"
@@ -34,6 +35,9 @@ ActiveRecord::Schema.define(version: 20150821064408) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "milestones", ["goal_id", "created_at"], name: "index_milestones_on_goal_id_and_created_at"
+  add_index "milestones", ["goal_id"], name: "index_milestones_on_goal_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

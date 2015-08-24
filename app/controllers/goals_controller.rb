@@ -8,8 +8,10 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
+    @goal.user = current_user
+    # binding.pry # デバッグ用
     if @goal.save
-      redirect_to new_milestone_path # previously @goal
+      redirect_to new_milestone_path #@goal
     else
       flash[:danger] = "Error"
       render 'new'
@@ -18,6 +20,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
+    @milestones = @goal.milestones
   end
 
 
